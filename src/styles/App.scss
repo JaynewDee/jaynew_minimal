@@ -1,11 +1,12 @@
-@import '_fonts';
-@import '_colors.scss';
+@import "./fonts/fonts";
+@import "_colors.scss";
 
-$title-margins: auto 0rem calc(.6rem / var(--size-variant)) calc(6rem / var(--size-variant));
+$title-margins: auto 0rem calc(0.6rem / var(--size-variant))
+  calc(10rem / var(--size-variant));
 
 :root {
-   font-size: 16px;
-   --size-variant: 1.3;
+  font-size: 12px;
+  --size-variant: 2.5;
 }
 
 body {
@@ -23,88 +24,93 @@ code {
 }
 
 #navBox {
-   position: relative;
-   background: $rich-black;
-   display: flex;
-   flex-flow: row wrap;
-   justify-content: space-between;
-   min-height: calc(8rem / var(--size-variant));
-   width: 100%;
-   box-shadow: 0 .5rem .15rem .33rem $rich-black;
-   z-index: 0;
+  position: relative;
+  background: $rich-black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: calc(30rem / var(--size-variant));
+  width: 100%;
+  box-shadow: 0 0.5rem 0.15rem 0.33rem $rich-black;
+  z-index: 0;
 
+  #lunacy {
+    align-self: flex-end;
+    color: $baby-powder;
+    font-family: $epilogue;
+    font-size: calc(6rem / var(--size-variant));
+    margin: $title-margins;
+  }
 
-   #lunacy {
-      align-self: flex-end;
+  #linkBox {
+    width: 20rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: flex-end;
+    margin: auto calc(6rem / var(--size-variant))
+      calc(0.6rem / var(--size-variant)) auto;
+
+    .navLink {
       color: $baby-powder;
-      font-size: calc(2rem / var(--size-variant));
-      margin: $title-margins;
-   }
-
-   #linkBox {
-      width: 20rem;
-      display: flex;
-      flex-flow: row wrap;
-      align-self: flex-end;
-      margin: auto calc(6rem / var(--size-variant)) calc(.6rem / var(--size-variant)) auto;
-
-      .navLink {
-         color: $baby-powder;
-         margin: auto;
-         font-size: calc(.95rem / var(--size-variant))
-      }
-   }
+      margin: calc(1.5rem / var(--size-variant));
+      font-family: $italic;
+      font-size: calc(3rem / var(--size-variant));
+    }
+  }
 }
 
-
 #bodyBox {
-   display: flex;
-   height: 100%;
-   margin-bottom: 0;
-   z-index: -1;
-   #leftBox {
-      width: 12%;
-   }
+  display: flex;
+  height: 100%;
+  margin-top: .5rem;
+  z-index: -1;
 
-   #contentBox {
+  #leftBox {
+    width: calc(30rem / var(--size-variant));
+    .sideItem {
+      position: relative;
+      width: calc(25rem / var(--size-variant));
+      height: 5%;
+      border: .33rem solid $rich-black;
+      border-right: .66rem solid $rich-black;
+      border-radius: 2rem 0 0 2rem;
+      // box-shadow: inset ;
+      margin: 1.5rem .1rem 1rem 1.5rem;
       background-color: $tiffany-blue;
-      width: 76%;
-      height: 100%;
+      z-index: 3;
+      opacity: .8;
+    }
+    .sideItem:hover {
+       cursor: pointer;
+       border-right: 5px solid $rich-black;
 
-      #contentSection {
-         background-color: $baby-powder;
-         height: 100vh;
-         width: 76%;
-         margin: 8% auto;
-         
-         
-         .category {
-            font-size: .66rem;
-            background-color: $rich-black;
-            color: white;
-            padding: 8%;
-            border-left: .66rem solid $baby-powder;
-            border-top: .66rem solid $rich-black;
-            box-shadow: -.33rem 0 .66rem .03rem $rich-black;
-            border-radius: 0 0 0 1rem;
-            margin-top: 1rem;
-         }
+    }
+    .sideItem:focus {
 
-         .category:hover {
-            box-shadow: inset 0 0 .1rem .06rem $rich-black;
-            cursor: pointer;
-            border-radius: 0 1rem 0 0;
-         }
-      }
-   }
+    }
+  }
 
-   #rightBox {
-      width: 12%;
-   }
+  #contentBox {
+    background-color: $tiffany-blue;
+    flex: 1 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+    background-color: $tiffany-blue;
+    border-left: .33rem solid $rich-black;
+    opacity: .8;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-   :root {
-      --size-variant: 1.5;
-   }
+  :root {
+    --size-variant: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --size-variant: 5;
+  }
 }

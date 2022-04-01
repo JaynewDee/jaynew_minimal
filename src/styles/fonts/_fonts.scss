@@ -1,0 +1,11 @@
+@font-face {
+   font-family: 'EpilogueItalic';
+   src: url('./Epilogue-Italic[wght].woff2') format('woff2');
+}
+@font-face {
+   font-family: 'Epilogue';
+   src: url('./Epilogue[wght].woff2') format('woff2');
+}
+
+$italic: 'EpilogueItalic';
+$epilogue: 'Epilogue';
