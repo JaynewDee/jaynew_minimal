@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Left = () => {
+const Left:React.FC = () => {
   return (
-    <div id="leftBox">Left</div>
+    <div id="leftBox">
+
+    </div>
   )
 }
 
-export default Left
+export default Left;

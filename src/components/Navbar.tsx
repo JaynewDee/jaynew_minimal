@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from './Link';
+import Brand from './Brand';
 
 const Navbar:React.FC = () => {
   return (
 
     <div id="navBox">
-       <h1 id="lunacy">Lunacy SoftWorks</h1>
+       <Brand />
        <div id="linkBox">
          <Link name="Link 1" />
          <Link name="Link 2" />

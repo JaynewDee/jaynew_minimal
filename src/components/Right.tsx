@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Right = () => {
+const Right:React.FC = () => {
   return (
-    <div id="rightBox">Right</div>
+    <div id="rightBox">
+
+    </div>
   )
 }
 
-export default Right
+export default Right;

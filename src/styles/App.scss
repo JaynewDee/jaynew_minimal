@@ -5,7 +5,7 @@ $title-margins: auto 0rem calc(.6rem / var(--size-variant)) calc(6rem / var(--si
 
 :root {
    font-size: 16px;
-   --size-variant: 1;
+   --size-variant: 1.3;
 }
 
 body {
@@ -23,19 +23,24 @@ code {
 }
 
 #navBox {
+   position: relative;
    background: $rich-black;
    display: flex;
    flex-flow: row wrap;
    justify-content: space-between;
-   min-height: calc(7rem / var(--size-variant));
+   min-height: calc(8rem / var(--size-variant));
    width: 100%;
+   box-shadow: 0 .5rem .15rem .33rem $rich-black;
+   z-index: 0;
+
 
    #lunacy {
       align-self: flex-end;
       color: $baby-powder;
-      font-size: calc(1.8rem / var(--size-variant));
+      font-size: calc(2rem / var(--size-variant));
       margin: $title-margins;
    }
+
    #linkBox {
       width: 20rem;
       display: flex;
@@ -54,20 +59,47 @@ code {
 
 #bodyBox {
    display: flex;
-   flex-flow: row nowrap;
-   height: 100vh;
-
+   height: 100%;
+   margin-bottom: 0;
+   z-index: -1;
    #leftBox {
-      width: 15%;
+      width: 12%;
    }
 
    #contentBox {
       background-color: $tiffany-blue;
-      width: 70%;
+      width: 76%;
+      height: 100%;
+
+      #contentSection {
+         background-color: $baby-powder;
+         height: 100vh;
+         width: 76%;
+         margin: 8% auto;
+         
+         
+         .category {
+            font-size: .66rem;
+            background-color: $rich-black;
+            color: white;
+            padding: 8%;
+            border-left: .66rem solid $baby-powder;
+            border-top: .66rem solid $rich-black;
+            box-shadow: -.33rem 0 .66rem .03rem $rich-black;
+            border-radius: 0 0 0 1rem;
+            margin-top: 1rem;
+         }
+
+         .category:hover {
+            box-shadow: inset 0 0 .1rem .06rem $rich-black;
+            cursor: pointer;
+            border-radius: 0 1rem 0 0;
+         }
+      }
    }
 
    #rightBox {
-      width: 15%;
+      width: 12%;
    }
 }
 
