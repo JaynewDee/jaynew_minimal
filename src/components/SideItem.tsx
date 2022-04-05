@@ -15,9 +15,9 @@ const SideItem: React.FC = () => {
 
 
   return (
-   <div className="sideItem">
+   <button className="sideItem">
 
-   </div>
+   </button>
   );
 };
 

@@ -1,11 +1,9 @@
 @import "./fonts/fonts";
 @import "_colors.scss";
 
-$title-margins: auto 0rem calc(0.6rem / var(--size-variant))
-  calc(10rem / var(--size-variant));
 
 :root {
-  font-size: 12px;
+  font-size: 14px;
   --size-variant: 2.5;
 }
 
@@ -28,7 +26,7 @@ code {
   background: $rich-black;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   height: calc(30rem / var(--size-variant));
   width: 100%;
   box-shadow: 0 0.5rem 0.15rem 0.33rem $rich-black;
@@ -37,60 +35,76 @@ code {
   #lunacy {
     align-self: flex-end;
     color: $baby-powder;
-    font-family: $epilogue;
+    font-family: $trispace;
+    flex: 1 0 50%;
     font-size: calc(6rem / var(--size-variant));
-    margin: $title-margins;
+    letter-spacing: .22rem;
+    margin: auto 0rem calc(2rem / var(--size-variant))
+    calc(10rem / var(--size-variant));
   }
 
   #linkBox {
     width: 20rem;
     display: flex;
     flex-flow: row wrap;
-    align-self: flex-end;
-    margin: auto calc(6rem / var(--size-variant))
+    align-self: flex-start;
+    flex: 1 0 50%;
+    margin: auto calc(2rem / var(--size-variant))
       calc(0.6rem / var(--size-variant)) auto;
 
     .navLink {
       color: $baby-powder;
       margin: calc(1.5rem / var(--size-variant));
-      font-family: $italic;
+      font-family: $trispace;
       font-size: calc(3rem / var(--size-variant));
+      letter-spacing: .11rem;
     }
   }
 }
 
+// #spacebar {
+//    height: .32rem;
+//    flex: 1 0 auto;
+// }
+
+
 #bodyBox {
   display: flex;
   height: 100%;
-  margin-top: .5rem;
-  z-index: -1;
+  margin-top: 0.5rem;
 
   #leftBox {
     width: calc(30rem / var(--size-variant));
     .sideItem {
-      position: relative;
-      width: calc(25rem / var(--size-variant));
-      height: 5%;
-      border: .33rem solid $rich-black;
-      border-right: .66rem solid $rich-black;
+      width: calc(27rem / var(--size-variant));
+      height: calc(36rem / var(--size-variant));
+      border: calc(.75rem / var(--size-variant)) solid $rich-black;
       border-radius: 2rem 0 0 2rem;
-      // box-shadow: inset ;
-      margin: 1.5rem .1rem 1rem 1.5rem;
+      margin: calc(5rem / var(--size-variant));
       background-color: $tiffany-blue;
-      z-index: 3;
-      opacity: .8;
-    }
-    .sideItem:hover {
-       cursor: pointer;
-       border-right: 5px solid $rich-black;
+      opacity: 0.85;
+      box-shadow: inset .33rem 0 1rem  $rich-black;
 
     }
+    .sideItem:hover,
     .sideItem:focus {
+      box-shadow: -.1rem 0 .33rem  $rich-black;
 
+       position: absolute;
+      cursor: pointer;
+      border: 0.33rem solid $rich-black;
+      border-right: calc(2.4rem / var(--size-variant)) solid $orange-peel;
+      opacity: 0.9;
+      transform: translateX(-.2rem);
+
+      z-index: 5;
     }
+    
   }
 
   #contentBox {
+    z-index: 2;
+    position: relative;
     background-color: $tiffany-blue;
     flex: 1 0 auto;
     height: 100vh;
@@ -98,8 +112,10 @@ code {
     flex-flow: column wrap;
     align-content: flex-end;
     background-color: $tiffany-blue;
-    border-left: .33rem solid $rich-black;
-    opacity: .8;
+    border-left: 0.75rem solid $rich-black;
+    opacity: 0.96;
+    box-shadow: -.1rem 0 .33rem $rich-black;
+    overflow: auto;
   }
 }
 
@@ -113,4 +129,13 @@ code {
   :root {
     --size-variant: 5;
   }
+}
+
+@media screen and (max-width: 425px) {
+   :root {
+      --size-variant: 7;
+   }
+   #navBox {
+      flex-flow: column wrap;
+   }
 }

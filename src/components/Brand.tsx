@@ -2,7 +2,7 @@ import React from 'react'
 
 const Brand = () => {
   return (
-   <h1 id="lunacy">Lunacy SoftWorks</h1>
+   <h1 id="lunacy">Stray River SoftWorks</h1>
   )
 }
 

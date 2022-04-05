@@ -4,11 +4,11 @@ import SideItem from './SideItem'
 const Left:React.FC = () => {
   return (
     <div id="leftBox">
-         <SideItem />
-         <SideItem />
-         <SideItem />
-         <SideItem />
-         <SideItem />
+         <SideItem key="1"/>
+         <SideItem key="2"/>
+         <SideItem key="3"/>
+         <SideItem key="4"/>
+         <SideItem key="5"/>
     </div>
   )
 }
